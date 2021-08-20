@@ -1,0 +1,398 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    li{
+        list-style: none;
+    }
+}
+
+$letraBlanca: white;
+$fondoHeader: #e7f9ff;
+
+body{
+    height: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $fondoHeader;
+    position: relative;
+    
+    .menu-abrir, .menu-cerrar{
+        display: none;
+        align-items: center;
+    }
+    
+    @media (max-width: 768px){
+        flex-direction: row;
+        justify-content: space-around;
+        .button{
+            display: none;
+        }
+        .menu-abrir, .menu-cerrar{
+            display: block;
+            color: black;
+        }
+        .menu{
+            position: absolute;
+            top: -400%;
+            transition: top .4s ease-out;
+            &:target{
+                top: 0;
+            }
+            ul{
+                flex-direction: column;
+                margin-top: 25px;
+            }
+        }
+    } 
+    .menu{
+        width: 100%;
+        background-color: rgb(61, 59, 59);
+        color: $letraBlanca;
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            margin-bottom: 0;
+            li{
+                padding: 0 10px;
+                &:hover,{
+                    background-color:$fondoHeader;
+                    transition: .5s;
+                }
+                a{
+                    font-size: 1.5vw;
+                    text-decoration: none;
+                    color: $letraBlanca;
+                    text-transform: uppercase;
+                    @media (max-width: 768px){
+                        font-size: 3vw;
+                    }
+                    @media (max-width: 520px){
+                        font-size: 5vw;
+                    }
+                    &:hover{
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-index{
+    background-image: url(../img/nurse-helping-patient.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    .container{
+        display: flex;
+        justify-content: center;
+        margin-left: 60%;
+        margin-right: 10%;
+        border: solid rgba(250, 250, 250, 0.3) 1px;
+        padding: 15px 15px;
+        @media (max-width: 768px){
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 574px){
+            margin: 0 5%;
+        }
+        div{
+            background-color: rgba(250, 250, 250, 0.6);
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            h1{
+                font-size: 1.6em;
+                text-align: center;
+                font-weight: bolder;
+                color: #09708f;
+            }
+            h2{
+                font-size: 2em;
+                text-align: center;
+                font-weight: bolder;
+                color: #09708f;
+                text-transform: uppercase;
+            }
+            p{
+                text-align: center;
+            }
+        }   
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #09708f;
+    color: black;
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        @media (max-width: 771px){
+            flex-direction: column;
+        }
+        @media (max-width: 531px){
+            text-align: center;
+        }
+        img{
+            width: 180px;
+            height: 75px;
+        }
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 0;
+        @media(max-width: 770px){
+            flex-direction: column;
+            align-items: center;
+        }
+        i{
+            padding: 5px;
+        }
+    }
+    p{
+        text-align: center;
+        color: white;
+        margin: 0 0;
+        height: 100%;
+        background-color: rgb(32, 30, 30);
+    }
+}
+
+
+
+
+//estilos nosotros
+
+
+
+.main-nosotros{
+    display: flex;
+    background-color: #1d1b1a;
+    color: $letraBlanca;
+    @media (max-width: 768px){
+        .nosotros{
+            padding: 50px;
+            background-image: url(../img/mundo.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            p{
+                background-color: rgba(250, 250, 250, 0.4);
+                color: black;
+                font-weight: bold;
+            }
+        }
+        img{
+            display: none;
+        }
+    }
+    
+    @media (max-width: 425px){
+        .nosotros{
+            padding: 15px;
+        }
+    }
+    
+    img{
+        margin-left: 25px;
+    }
+    .nosotros{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2{
+            text-align: center;
+            }
+        p{
+            padding: 30px 40px;
+            }
+    }
+}
+
+
+//estilos servicios
+
+
+.main-servicios{
+    display: flex;
+    flex-direction: column;
+    background-color: $fondoHeader;
+    .titulo{
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35px;
+            width: 100%;
+            height: 15vh;
+            background-color: #09708f;
+            h2{
+                font-size: 4em;
+            }
+        }
+
+    .containerServicios{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color:$fondoHeader;
+        color: $letraBlanca;
+        margin-top: 35px;
+        .servicios{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            padding: 20px;
+            margin: 10px 10px;
+            box-shadow: 0 0 40px -5px rgba(121, 103, 103, 0.301);
+            @media(max-width: 851px){
+                flex-direction: column;
+                width: 40%;
+            }
+            @media(max-width: 614px){
+                flex-direction: column;
+                width: 80%;
+            }
+            p{
+                text-align: center;
+                padding: 15px;
+                color: black;
+                font-weight: bold;
+            }
+            i{
+                text-align: center;
+                font-size: 70px;
+                padding: 30px;
+                border-radius: 100%;
+                color: white;
+                background-color: #09708f;
+            }
+        }
+    }
+}
+
+
+
+//estilos preguntas
+
+.main-preguntas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $fondoHeader;
+    color: black;
+        .titulo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 35px;
+            width: 100%;
+            height: 15vh;
+            background-color: #09708f;
+            h2{
+                font-size: 4em;
+            }
+        }
+    .preguntas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5% 0;
+        width: 100%;
+    }
+    div{
+        width: 70%;
+        margin-top: .5em;
+        padding: .7em;
+        box-shadow: 0 0 40px -5px rgba(121, 103, 103, 0.301);
+        border-radius: 25px;
+        background-color: $fondoHeader;
+    }
+    .consulta{
+        text-align: center;
+        background-color: $fondoHeader;
+        color: black;
+        width: 50%;
+        padding: .1em;
+        border-radius: 25px;
+        p{
+            i{
+                background-color: rgb(83, 245, 83);
+                border-radius: 50%;
+            }
+        }
+        @media(max-width: 534px){
+            width: 90%;
+        }
+        p{
+            font-weight: bold;
+            margin: 0 0;
+        }
+    }
+
+    @media (max-width: 728px){
+        padding: 0 20px;
+        div{
+            width: 90%;
+        }
+    }
+}
+
+
+//estilos contacto
+
+.main-contacto{
+    background-color: $fondoHeader;
+    display: flex;
+    flex-direction: column;
+    .titulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 35px;
+        width: 100%;
+        height: 15vh;
+        background-color: #09708f;
+        h2{
+            font-size: 4em;
+        }
+    }
+    .contacto{
+        display: flex;
+        justify-content: space-around;
+        margin: 35px 15px;
+        align-items: center;
+        @media ( max-width: 576px){
+            flex-direction: column-reverse;
+        }
+        iframe{
+            height: 50vh;
+            width: 50%;
+            box-shadow: 0 0 40px -5px rgba(121, 103, 103, 0.301);
+            @media (max-width: 576px){
+                width: 85%;
+                height: 30vh;
+            }
+        }
+    }
+}
